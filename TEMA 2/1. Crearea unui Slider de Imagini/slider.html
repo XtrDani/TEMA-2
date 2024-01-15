@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    #slider-container {
+      position: relative;
+      overflow: hidden;
+      width: 800px; 
+      margin: 20px auto;
+    }
+
+    .slider-image {
+      display: none;
+      width: 100%;
+      height: auto;
+    }
+
+    #prevBtn, #nextBtn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      cursor: pointer;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px;
+    }
+
+    #prevBtn {
+      left: 0;
+    }
+
+    #nextBtn {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="slider-container">
+  <img class="slider-image" src="ktm.jpg" alt="Image 1">
+  <img class="slider-image" src="husqvarna.png" alt="Image 2">
+  <img class="slider-image" src="gasgas.jpg" alt="Image 3"> 
+  
+
+  <button id="prevBtn" onclick="prevSlide()">Previous</button>
+  <button id="nextBtn" onclick="nextSlide()">Next</button>
+</div>
+
+<script>
+  let currentSlide = 0;
+  const slides = document.querySelectorAll('.slider-image');
+  const totalSlides = slides.length;
+  const interval = 3000;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      if (i === index) {
+        slide.style.display = 'block';
+      } else {
+        slide.style.display = 'none';
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide() {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    showSlide(currentSlide);
+  }
+
+  function autoSlide() {
+    nextSlide();
+  }
+ 
+  setInterval(autoSlide, interval);
+
+  showSlide(currentSlide);
+</script>
+
+</body>
+</html>
