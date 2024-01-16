@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Memory Game</title>
+  <style>
+    button {
+      font-size: 20px;
+      margin: 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Memory Game</h1>
+<button onclick="startGame()">Start Game</button>
+
+<script src="joc_audio.js"></script>
+
+<div>
+  <h2>Level: <span id="level">1</span></h2>
+  <p>Reproduceți secvența de sunete și apoi repetați-o:</p>
+  <div>
+    <button onclick="userClick(0)">Ding!</button>
+    <button onclick="userClick(1)">GunShot</button>
+    <button onclick="userClick(2)">ERROR</button>
+    <button onclick="userClick(3)">Transition</button>
+  </div>
+</div>
+
+</body>
+</html>

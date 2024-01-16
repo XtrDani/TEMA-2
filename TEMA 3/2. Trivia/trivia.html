@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joc de Trivia</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        #question-container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        #options-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="question-container">
+    <h2 id="question"></h2>
+</div>
+
+<div id="options-container">
+    <button onclick="verificaRaspuns(0)">Opțiunea 1</button>
+    <button onclick="verificaRaspuns(1)">Opțiunea 2</button>
+    <button onclick="verificaRaspuns(2)">Opțiunea 3</button>
+    <button onclick="verificaRaspuns(3)">Opțiunea 4</button>
+</div>
+
+<div id="result"></div>
+
+<script src="trivia.js"></script>
+
+</body>
+</html>
